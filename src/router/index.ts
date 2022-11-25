@@ -1,8 +1,7 @@
 import {createRouter, createWebHistory, type RouteLocation} from 'vue-router'
-import { useCurrentUser, getCurrentUser } from 'vuefire'
+import { getCurrentUser } from 'vuefire'
 import { signOut } from 'firebase/auth'
 import { auth } from '@/plugins/firebase'
-import { ref } from 'vue'
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),

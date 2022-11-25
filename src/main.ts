@@ -1,5 +1,4 @@
 import { createApp } from 'vue'
-import { createPinia } from 'pinia'
 import { VueFire, VueFireAuth } from 'vuefire'
 
 import App from '@/App.vue'
@@ -11,7 +10,6 @@ import { firebaseApp } from '@/plugins/firebase'
 
 const app = createApp(App)
 
-app.use(createPinia())
 app.use(router)
 app.use(vuetify)
 app

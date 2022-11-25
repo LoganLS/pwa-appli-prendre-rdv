@@ -13,7 +13,7 @@ const errorMessage = ref<string>('')
 
 async function submit() {
     try {
-        const response = await signInWithEmailAndPassword(auth, email.value, password.value);
+        await signInWithEmailAndPassword(auth, email.value, password.value);
         errorAuthentication.value = false
         router.push('/')
     } catch (err: any) {
@@ -40,7 +40,7 @@ async function submit() {
                 </VRow>
                 <VRow justify="center">
                     <VCol cols="3" class="pa-0">
-                      <VBtn block class="py-6" type="submit" :loading="loading">Envoyer</VBtn>
+                      <VBtn block class="py-6" type="submit" :loading="loading">Se connecter</VBtn>
                     </VCol>
                 </VRow>
                 <VRow justify="center" v-if="errorAuthentication">

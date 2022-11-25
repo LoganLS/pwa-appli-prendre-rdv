@@ -64,7 +64,7 @@ async function submit() {
                 </VRow>
                 <VRow justify="center">
                     <VCol cols="3" class="pa-0">
-                      <VBtn block class="py-6" type="submit" :loading="loading">Envoyer</VBtn>
+                      <VBtn block class="py-6" type="submit" :loading="loading">Créer</VBtn>
                     </VCol>
                 </VRow>
                 <VRow justify="center" v-if="errorAuthentication">
