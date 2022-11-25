@@ -28,12 +28,13 @@ const router = createRouter({
     ],
 })
 
-function isIdentified(to: RouteLocation): boolean {
+async function isIdentified(to: RouteLocation): Promise<boolean> {
     if(!to.meta.requiresAuth) {
         return true;
     }
 
-    return  useCurrentUser().value !== null && useCurrentUser().value !== undefined
+    const user = await getCurrentUser()
+    return user !== null
 }
 
 router.beforeEach(async (to, from, next) => {
