@@ -18,6 +18,7 @@ const LightTheme: any = {
 
         // Custom colors
         third: '#2C363F',
+        background: '#211E1E',
     },
 }
 
