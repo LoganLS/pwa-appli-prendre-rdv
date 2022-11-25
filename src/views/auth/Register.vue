@@ -1,0 +1,3 @@
+<template>
+    Page Register
+</template>
