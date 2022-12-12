@@ -6,6 +6,7 @@ import { getAuth } from 'firebase/auth'
 export const firebaseApp = initializeApp({
     apiKey: import.meta.env.VITE_API_KEY,
     projectId: import.meta.env.VITE_PROJECT_ID,
+    storageBucket: import.meta.env.VITE_STORAGE,
 })
 export const database = getDatabase(firebaseApp)
 export const firestore = getFirestore(firebaseApp)

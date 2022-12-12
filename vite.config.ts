@@ -7,7 +7,8 @@ import { VitePWA } from "vite-plugin-pwa";
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
-    vue(), VitePWA({
+    vue(),
+    VitePWA({
       registerType: "autoUpdate",
       includeAssets: ["favicon.ico", "apple-touch-icon.png", "masked-icon.svg"],
       manifest: {
@@ -37,5 +38,5 @@ export default defineConfig({
     alias: {
         '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
-},
+  },
 });

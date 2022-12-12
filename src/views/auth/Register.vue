@@ -18,6 +18,7 @@ const errorMessage = ref<string>('')
 
 async function submit() {
     try {
+        loading.value = true
         const response = await createUserWithEmailAndPassword(auth, email.value, password.value);
         createClient({
             uid: response.user.uid,
@@ -31,6 +32,8 @@ async function submit() {
     } catch (err: any) {
         errorAuthentication.value = true
         errorMessage.value = err.message
+    } finally {
+        loading.value = false
     }
 }
 </script>

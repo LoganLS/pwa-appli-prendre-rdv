@@ -24,33 +24,38 @@ const router = createRouter({
             name: 'Register',
             component: () => import('@/views/auth/Register.vue'),
         },
+        {
+            path: '/prendre-rendez-vous',
+            name: 'rdvForm',
+            component: () => import('@/views/rdvForm.vue'),
+            meta: {
+                requiresAuth: true,
+            },
+        }
     ],
 })
-
-async function isIdentified(to: RouteLocation): Promise<boolean> {
-    if(!to.meta.requiresAuth) {
-        return true;
-    }
-
-    const user = await getCurrentUser()
-    return user !== null
-}
 
 router.beforeEach(async (to, from, next) => {
     if (to.path === '/logout') {
         try {
-            signOut(auth)
+            await signOut(auth)
             return next({ name: 'Login' })
         } catch (err) {
             return next({ name: from.name ? from.name : 'Home' })
         }
     }
 
-    if (!isIdentified(to)) {
-        return next({ name: 'Login' })
+    if(!to.meta.requiresAuth) {
+        return next();
     }
 
-    return next()
+    const isIdentified = await getCurrentUser()
+
+    if (!isIdentified) {
+        return next({ name: 'Login' })
+    } else {
+        return next()
+    }
 })
 
 export default router
