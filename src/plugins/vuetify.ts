@@ -5,7 +5,7 @@ import 'vuetify/styles'
 import '@mdi/font/css/materialdesignicons.css'
 
 const LightTheme: any = {
-    dark: false,
+    dark: true,
     variables: {},
     colors: {
         primary: '#E75A7C',
@@ -36,7 +36,7 @@ export default createVuetify({
             fontWeight: '500',
         },
         VIcon: {
-            color: 'third',
+            color: 'primary',
         },
         VRow: {
             margin: 0,  

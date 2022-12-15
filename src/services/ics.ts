@@ -52,9 +52,7 @@ function makeIcsFile(eventDate: EventDate, summary: string, description: string)
 
     const fileName = makeid(10) + '.ics';
     const file = new File([data], fileName, { type: 'text/calendar' })
-    //window.open( "data:text/calendar;charset=utf8,", escape(data));
     return createFileInStorage(file, fileName)
-    //return window.URL.createObjectURL(file)
 }
 
 function makeid(length: number) {

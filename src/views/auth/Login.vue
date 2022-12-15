@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import InstallPwa from '@/components/InstallPwa.vue'
 import { ref } from 'vue';
 import { signInWithEmailAndPassword } from 'firebase/auth'
 import { auth } from '@/plugins/firebase'
@@ -51,4 +52,5 @@ async function submit() {
             </VForm>
         </VCol>
     </VRow>
+    <InstallPwa />
 </template>
