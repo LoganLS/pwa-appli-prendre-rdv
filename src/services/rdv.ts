@@ -3,6 +3,7 @@ import { firestore } from '@/plugins/firebase'
 import { getClientUID } from './client'
 import { createFile } from '@/services/ics'
 import { getDownloadURL, getStorage, ref, uploadBytes } from 'firebase/storage'
+import { RegisterSWData } from "vite-plugin-pwa"
 
 const COLLECTION = 'rdvs'
 
