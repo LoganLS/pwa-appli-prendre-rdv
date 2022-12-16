@@ -40,8 +40,8 @@ async function submit() {
                     <VTextField v-model="password" label="Mot de passe" type="password" />
                 </VRow>
                 <VRow justify="center">
-                    <VCol cols="3" class="pa-0">
-                      <VBtn block class="py-6" type="submit" :loading="loading">Se connecter</VBtn>
+                    <VCol align="center" class="mb-4">
+                      <VBtn type="submit" :loading="loading">Se connecter</VBtn>
                     </VCol>
                 </VRow>
                 <VRow justify="center" v-if="errorAuthentication">

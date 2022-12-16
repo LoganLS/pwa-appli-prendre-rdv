@@ -7,7 +7,6 @@ const isLoading = ref<Boolean>(true)
 
 onMounted(() => {
   setTimeout(() => {
-    console.log('coucou')
     isLoading.value = false
   }, 1500)
 })
@@ -16,6 +15,8 @@ onMounted(() => {
 <template>
   <VApp class="bg-background">
     <LoadingScreen v-if="isLoading" />
-    <RouterView v-else />
+    <div v-show="!isLoading">
+      <RouterView />
+    </div>
   </VApp>
 </template>
