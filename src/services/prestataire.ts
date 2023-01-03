@@ -1,6 +1,5 @@
-import { collection, addDoc, getDoc, getDocs } from 'firebase/firestore'
-import { database, firebaseApp, firestore } from '@/plugins/firebase'
-import { useCurrentUser } from 'vuefire'
+import { collection, getDocs } from 'firebase/firestore'
+import { firestore } from '@/plugins/firebase'
 
 const COLLECTION = 'prestataires'
 
